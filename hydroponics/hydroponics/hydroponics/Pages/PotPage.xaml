@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              BackgroundColor="#151515"
+             
+             x:Class="hydroponics.Pages.PotPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="buttonStyle" TargetType="TimePicker">
+                <Setter Property="TextColor" Value="#004D40" />
+                <Setter Property="BackgroundColor" Value="#80CBC4" />
+                
+                <Setter Property="FontSize" Value="Large" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        
+        <StackLayout Padding="5">
+            <StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="10,0">
+                    <Label Text="Периуд залития -" TextColor="AntiqueWhite"/>
+                    <Label x:Name="FrequencyLabel" 
+                       BindingContext="{x:Reference Name=frequencySlider}"
+                       Text="{Binding Path=Value}"
+                       TextColor="AntiqueWhite"
+                      />
+                    <Label Text=" Минут" TextColor="AntiqueWhite"/>
+                </StackLayout>
+
+                <Slider x:Name="frequencySlider" Maximum="180" Minimum="30" Value="90"  ValueChanged="frequencySlider_ValueChanged"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="35*"/>
+                        <ColumnDefinition Width="35*"/>
+                        <ColumnDefinition Width="30*"/>
+                    </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="1" Margin="5">
+                    <Label x:Name="TimeStartLabel" Text="Время Начала" TextColor="AntiqueWhite"/>
+                        <TimePicker x:Name="TimeStart"></TimePicker>
+                </StackLayout>
+                    <StackLayout Grid.Column="2"  Margin="5">
+                    <Label x:Name="TimeStopLabel" Text="Время Окончиния" TextColor="AntiqueWhite"/>
+                        <TimePicker x:Name="TimeStop" Background="#151515"></TimePicker>
+                </StackLayout>
+                <Button x:Name="SetTime" Text="Устоновить" BackgroundColor="#2F4F4F" Grid.Column="3" Margin="0,7,0,7"/>
+                </Grid>
+            </StackLayout> 
+            <Button x:Name="DelitButton" Text="Удолить" BackgroundColor="#2F4F4F" Clicked="DelitButton_Clicked"/>
+            
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

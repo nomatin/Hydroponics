@@ -1,0 +1,16 @@
+D:\project\hydroponics\hydroponics\hydroponics\hydroponics\obj\Debug\netstandard2.0\hydroponics.csproj.AssemblyReference.cache
+D:\project\hydroponics\hydroponics\hydroponics\hydroponics\obj\Debug\netstandard2.0\hydroponics.GeneratedMSBuildEditorConfig.editorconfig
+D:\project\hydroponics\hydroponics\hydroponics\hydroponics\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\project\hydroponics\hydroponics\hydroponics\hydroponics\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+D:\project\hydroponics\hydroponics\hydroponics\hydroponics\obj\Debug\netstandard2.0\hydroponics.AssemblyInfoInputs.cache
+D:\project\hydroponics\hydroponics\hydroponics\hydroponics\obj\Debug\netstandard2.0\hydroponics.AssemblyInfo.cs
+D:\project\hydroponics\hydroponics\hydroponics\hydroponics\obj\Debug\netstandard2.0\hydroponics.csproj.CoreCompileInputs.cache
+D:\project\hydroponics\hydroponics\hydroponics\hydroponics\obj\Debug\netstandard2.0\hydroponics.dll
+D:\project\hydroponics\hydroponics\hydroponics\hydroponics\obj\Debug\netstandard2.0\ref\hydroponics.dll
+D:\project\hydroponics\hydroponics\hydroponics\hydroponics\obj\Debug\netstandard2.0\hydroponics.pdb
+D:\project\hydroponics\hydroponics\hydroponics\hydroponics\bin\Debug\netstandard2.0\hydroponics.deps.json
+D:\project\hydroponics\hydroponics\hydroponics\hydroponics\bin\Debug\netstandard2.0\hydroponics.dll
+D:\project\hydroponics\hydroponics\hydroponics\hydroponics\bin\Debug\netstandard2.0\ref\hydroponics.dll
+D:\project\hydroponics\hydroponics\hydroponics\hydroponics\bin\Debug\netstandard2.0\hydroponics.pdb
+D:\project\hydroponics\hydroponics\hydroponics\hydroponics\obj\Debug\netstandard2.0\XamlC.stamp
+D:\project\hydroponics\hydroponics\hydroponics\hydroponics\obj\Debug\netstandard2.0\Pages\PotPage.xaml.g.cs
