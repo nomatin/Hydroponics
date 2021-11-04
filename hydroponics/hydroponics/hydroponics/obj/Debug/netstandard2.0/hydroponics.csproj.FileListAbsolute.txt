@@ -14,3 +14,6 @@ D:\project\hydroponics\hydroponics\hydroponics\hydroponics\bin\Debug\netstandard
 D:\project\hydroponics\hydroponics\hydroponics\hydroponics\bin\Debug\netstandard2.0\hydroponics.pdb
 D:\project\hydroponics\hydroponics\hydroponics\hydroponics\obj\Debug\netstandard2.0\XamlC.stamp
 D:\project\hydroponics\hydroponics\hydroponics\hydroponics\obj\Debug\netstandard2.0\Pages\PotPage.xaml.g.cs
+D:\project\hydroponics\hydroponics\hydroponics\hydroponics\bin\Debug\netstandard2.0\Mono.Android.dll
+D:\project\hydroponics\hydroponics\hydroponics\hydroponics\bin\Debug\netstandard2.0\Mono.Android.pdb
+D:\project\hydroponics\hydroponics\hydroponics\hydroponics\bin\Debug\netstandard2.0\Mono.Android.xml

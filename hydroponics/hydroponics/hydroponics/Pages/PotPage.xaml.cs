@@ -1,4 +1,5 @@
-﻿using hydroponics.sqlClasses;
+﻿using hydroponics.Classes;
+using hydroponics.sqlClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace hydroponics.Pages
             this.mainPage = mainPage;
             this.Title = Pot.Name;
             InitializeComponent();
-            frequencySlider.Value = Pot.WateringFrequency
+            frequencySlider.Value = Pot.WateringFrequency;
         }
 
         private async void DelitButton_Clicked(object sender, EventArgs e)
@@ -47,6 +48,17 @@ namespace hydroponics.Pages
             Pot.WateringFrequency = (int)frequencySlider.Value;
             await pointBd.Database.UpdateItemAsync(Pot);
             //FrequencyLabel.Text = "Частота задива - " + frequencySlider.Value.ToString() + " минут";
+        }
+
+        private void SetTime_Clicked(object sender, EventArgs e)
+        {
+            //List<string> ssid = DependencyService.Get<IWifiService>().WifiList();
+            string ssid = DependencyService.Get<IWifi>().GetSSID();
+            if(ssid != "HydroponicsPod")
+            {
+                DisplayAlert("Внимание", "Подключитесь к WiFi горшка - \"HydroponicsPod\".\n Ваш WiFi - "+ ssid, "Ок");
+            }
+
         }
     }
 }

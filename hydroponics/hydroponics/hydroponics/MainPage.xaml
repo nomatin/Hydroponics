@@ -80,7 +80,7 @@
                             <StackLayout>
                                 <Label Text="Имя горшка" TextColor="White"/>
 
-                                <Entry x:Name="NamePot" TextColor="White" TextChanged="NamePot_TextChanged"/>
+                                <Entry x:Name="NamePot" TextColor="White"/>
                                 
                                 <Label Text="ID горшка" TextColor="White"/>
                                 <StackLayout Orientation="Horizontal" Padding="5">
@@ -89,7 +89,7 @@
                                             <ColumnDefinition Width="80*"/>
                                             <ColumnDefinition Width="20*"/>
                                         </Grid.ColumnDefinitions>
-                                        <Entry x:Name="idPot" TextColor="White" TextChanged="idPot_TextChanged" Grid.Column="0"/>
+                                        <Entry x:Name="idPot" TextColor="White" Grid.Column="0"/>
                                         <Button x:Name="qr" Text="QR" Clicked="qr_Clicked" BackgroundColor="#2F4F4F" Grid.Column="1" Margin="0,0,0,10"/>
                                     </Grid>
                                 </StackLayout>
@@ -102,7 +102,7 @@
                                 </StackLayout>
                                 <StackLayout>
                                     <Label x:Name="PasswordLabel" Text="Пароль" TextColor="AntiqueWhite"/>
-                                    <Entry x:Name="PasswordEntry" TextChanged="PasswordEntry_TextChanged" TextColor="AntiqueWhite"/>
+                                    <Entry x:Name="PasswordEntry" TextColor="AntiqueWhite"/>
                                 </StackLayout>
                                 <StackLayout>
                                     <Button x:Name="addPod" BackgroundColor="#2F4F4F" Text="Добавить" Clicked="addPod_Clicked"/>

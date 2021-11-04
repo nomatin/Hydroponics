@@ -15,8 +15,7 @@ namespace hydroponics
     public partial class MainPage : Shell
     {
         private List<ListPots> ListPots;
-        private string namePotText;
-        private string idPotText;
+        
         public MainPage()
         {
             
@@ -43,10 +42,7 @@ namespace hydroponics
             }
             this.Items.Add(addMenu);
         }
-        private void NamePot_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            namePotText = NamePot.Text;
-        }
+        
 
         private void qr_Clicked(object sender, EventArgs e)
         {
@@ -72,27 +68,24 @@ namespace hydroponics
             await Navigation.PushAsync(ScannerPage);
         }
 
-        private void idPot_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            idPotText = idPot.Text;
-        }
+        
 
         private void addPod_Clicked(object sender, EventArgs e)
         {
-            addPodDef();
+            AddPodDef();
         }
 
         private void PasswordEntry_TextChanged(object sender, TextChangedEventArgs e)
         {
-            addPodDef();
+            AddPodDef();
         }
-        private async void addPodDef()
+        private async void AddPodDef()
         {
-            if (idPotText != null && namePotText != null && PasswordEntry.Text.Length >= 8 && SSIDEntry.Text.Length > 1)
+            if (idPot.Text != null && NamePot.Text != null && PasswordEntry.Text.Length >= 8 && SSIDEntry.Text.Length > 1)
             {
                 ListPots pot = new ListPots();
-                pot.Name = namePotText;
-                pot.IdPot = idPotText;
+                pot.Name = NamePot.Text;
+                pot.IdPot = idPot.Text;
                 var answer = await pointBd.Database.SavePotAsync(pot);
                 WiFi.Save(SSIDEntry.Text, PasswordEntry.Text);
                 NamePot.Text = "";

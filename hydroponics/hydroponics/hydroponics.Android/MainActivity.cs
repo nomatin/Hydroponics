@@ -40,4 +40,5 @@ namespace hydroponics.Droid
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
+
 }

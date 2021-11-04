@@ -45,7 +45,7 @@
                     <Label x:Name="TimeStopLabel" Text="Время Окончиния" TextColor="AntiqueWhite"/>
                         <TimePicker x:Name="TimeStop" Background="#151515"></TimePicker>
                 </StackLayout>
-                <Button x:Name="SetTime" Text="Устоновить" BackgroundColor="#2F4F4F" Grid.Column="3" Margin="0,7,0,7"/>
+                <Button x:Name="SetTime" Text="Устоновить" Clicked="SetTime_Clicked" BackgroundColor="#2F4F4F" Grid.Column="3" Margin="0,7,0,7"/>
                 </Grid>
             </StackLayout> 
             <Button x:Name="DelitButton" Text="Удолить" BackgroundColor="#2F4F4F" Clicked="DelitButton_Clicked"/>
