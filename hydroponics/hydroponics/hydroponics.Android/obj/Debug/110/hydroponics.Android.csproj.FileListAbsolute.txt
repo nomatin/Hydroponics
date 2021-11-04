@@ -627,3 +627,4 @@ D:\project\hydroponics\hydroponics\hydroponics\hydroponics.Android\obj\Debug\110
 D:\project\hydroponics\hydroponics\hydroponics\hydroponics.Android\obj\Debug\110\androidx\proguard\595e5e53-5164-478a-b906-ed77ae94bee8.cfg
 D:\project\hydroponics\hydroponics\hydroponics\hydroponics.Android\obj\Debug\110\res\drawable\add.png
 D:\project\hydroponics\hydroponics\hydroponics\hydroponics.Android\obj\Debug\110\res\drawable\pot.png
+D:\project\hydroponics\hydroponics\hydroponics\hydroponics.Android\obj\Debug\110\hydroponics.Android.csproj.CopyComplete

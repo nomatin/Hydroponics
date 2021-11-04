@@ -81,6 +81,7 @@
                                 <Label Text="Имя горшка" TextColor="White"/>
 
                                 <Entry x:Name="NamePot" TextColor="White" TextChanged="NamePot_TextChanged"/>
+                                
                                 <Label Text="ID горшка" TextColor="White"/>
                                 <StackLayout Orientation="Horizontal" Padding="5">
                                     <Grid>
@@ -92,10 +93,22 @@
                                         <Button x:Name="qr" Text="QR" Clicked="qr_Clicked" BackgroundColor="#2F4F4F" Grid.Column="1" Margin="0,0,0,10"/>
                                     </Grid>
                                 </StackLayout>
-                                <Button x:Name="addPod" BackgroundColor="#2F4F4F" Text="Добавить" Clicked="addPod_Clicked"/>
-
+                                
                             </StackLayout>
-
+                            <StackLayout>
+                                <StackLayout>
+                                    <Label x:Name="SSIDLabel" Text="Имя сети" TextColor="AntiqueWhite"/>
+                                    <Entry x:Name="SSIDEntry" TextColor="AntiqueWhite"/>
+                                </StackLayout>
+                                <StackLayout>
+                                    <Label x:Name="PasswordLabel" Text="Пароль" TextColor="AntiqueWhite"/>
+                                    <Entry x:Name="PasswordEntry" TextChanged="PasswordEntry_TextChanged" TextColor="AntiqueWhite"/>
+                                </StackLayout>
+                                <StackLayout>
+                                    <Button x:Name="addPod" BackgroundColor="#2F4F4F" Text="Добавить" Clicked="addPod_Clicked"/>
+                                </StackLayout>
+                                
+                            </StackLayout>
                         </StackLayout>
                     </ContentPage.Content>
                 </ContentPage>
@@ -104,43 +117,7 @@
         </Tab>
 
     </FlyoutItem>
-    <!--
-    <FlyoutItem Title="Анимации" FlyoutIcon="fire.png">
-        <Tab>
-
-            <ShellContent Title="Огонь" Route="fire">
-                <pages:PageFire />
-            </ShellContent>
-            <ShellContent Title="Радуга">
-                <pages:PageRain />
-            </ShellContent>
-            <ShellContent Title="Стробоскоп">
-                <pages:PageStrobe />
-            </ShellContent>
-        </Tab>
-    </FlyoutItem>
-    
-    <FlyoutItem Title="Пресеты" FlyoutIcon="presets.png">
-        <Tab>
-            <ShellContent Title="Выбор">
-                <pages:PagePresets/>
-            </ShellContent>
-            <ShellContent Title="Создание">
-                <pages:PageNewPreset/>
-            </ShellContent>
-        </Tab>
-    </FlyoutItem>
-    
-    <FlyoutItem Title="Настройки" FlyoutIcon="settings.png">
-        <Tab>
-            <ShellContent Title="Выбор">
-                <pages:PageSettings/>
-            </ShellContent>
-
-        </Tab>
-
-    </FlyoutItem>
-    -->
+   
 
 
 </Shell>

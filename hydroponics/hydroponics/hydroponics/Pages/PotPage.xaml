@@ -9,7 +9,6 @@
             <Style x:Key="buttonStyle" TargetType="TimePicker">
                 <Setter Property="TextColor" Value="#004D40" />
                 <Setter Property="BackgroundColor" Value="#80CBC4" />
-                
                 <Setter Property="FontSize" Value="Large" />
             </Style>
         </ResourceDictionary>

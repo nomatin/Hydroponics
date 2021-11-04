@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using ZXing.Net.Mobile.Forms;
 using hydroponics.sqlClasses;
+using hydroponics.Classes;
 
 namespace hydroponics
 {
@@ -21,6 +22,8 @@ namespace hydroponics
             
             InitializeComponent();
             UpdatingMenu();
+            SSIDEntry.Text =  WiFi.GetSSID();
+            PasswordEntry.Text = WiFi.GetPassword();
 
         }
         public async void UpdatingMenu()
@@ -74,21 +77,31 @@ namespace hydroponics
             idPotText = idPot.Text;
         }
 
-        private async void addPod_Clicked(object sender, EventArgs e)
+        private void addPod_Clicked(object sender, EventArgs e)
         {
-            
-            if (idPotText != null && namePotText != null)
+            addPodDef();
+        }
+
+        private void PasswordEntry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            addPodDef();
+        }
+        private async void addPodDef()
+        {
+            if (idPotText != null && namePotText != null && PasswordEntry.Text.Length >= 8 && SSIDEntry.Text.Length > 1)
             {
                 ListPots pot = new ListPots();
                 pot.Name = namePotText;
                 pot.IdPot = idPotText;
                 var answer = await pointBd.Database.SavePotAsync(pot);
+                WiFi.Save(SSIDEntry.Text, PasswordEntry.Text);
+                NamePot.Text = "";
+                idPot.Text = "";
                 UpdatingMenu();
-                
+
             }
-            
-            
-            
         }
+        
     }
+    
 }

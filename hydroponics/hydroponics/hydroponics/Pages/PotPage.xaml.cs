@@ -21,6 +21,7 @@ namespace hydroponics.Pages
             this.mainPage = mainPage;
             this.Title = Pot.Name;
             InitializeComponent();
+            frequencySlider.Value = Pot.WateringFrequency
         }
 
         private async void DelitButton_Clicked(object sender, EventArgs e)
@@ -29,7 +30,7 @@ namespace hydroponics.Pages
             mainPage.UpdatingMenu();
         }
 
-        private void frequencySlider_ValueChanged(object sender, ValueChangedEventArgs e)
+        private async void frequencySlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
             
             if(frequencySlider.Value%10 != 0)
@@ -43,6 +44,8 @@ namespace hydroponics.Pages
                     frequencySlider.Value = (int)(frequencySlider.Value / 10) * 10;
                 }
             }
+            Pot.WateringFrequency = (int)frequencySlider.Value;
+            await pointBd.Database.UpdateItemAsync(Pot);
             //FrequencyLabel.Text = "Частота задива - " + frequencySlider.Value.ToString() + " минут";
         }
     }
