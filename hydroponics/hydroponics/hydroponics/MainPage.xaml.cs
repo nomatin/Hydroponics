@@ -75,10 +75,7 @@ namespace hydroponics
             AddPodDef();
         }
 
-        private void PasswordEntry_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            AddPodDef();
-        }
+        
         private async void AddPodDef()
         {
             if (idPot.Text != null && NamePot.Text != null && PasswordEntry.Text.Length >= 8 && SSIDEntry.Text.Length > 1)
