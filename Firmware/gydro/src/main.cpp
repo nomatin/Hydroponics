@@ -8,24 +8,27 @@
 #include <ESP8266mDNS.h>
 #include <ESP8266HTTPUpdateServer.h>
 #include <WiFiUDP.h>
+#define pinPump 5
+#define pinSendor 4
+bool wateringBool = true;
 WiFiUDP Udp;
-int DelayWoterPomp = 14000;
+int DelayWoterPomp = 12000;
 const char *host = "esp";
 char incomingPacket[255];                             // buffer for incoming packets
 char replyPacket[] = "Hi there! Got the message :-)"; // a reply string to send back
-int delayWatering = 2 * 1000 * 60 * 60;
+int delayWatering = 1.5 * 1000 * 60 * 60;
 long int timerWatering = 0;
 ESP8266WebServer httpServer(80);
 ESP8266HTTPUpdateServer httpUpdater;
 void watering()
 {
-  digitalWrite(5, 1);
+  digitalWrite(pinPump, 1);
   delay(DelayWoterPomp);
-  digitalWrite(5, 0);
+  digitalWrite(pinPump, 0);
 }
 void parser()
 {
-  pinMode(5, OUTPUT);
+
   byte numOrder[10];
   int count = 0;
   char *pointer = incomingPacket;
@@ -46,6 +49,8 @@ void parser()
 }
 void setup(void)
 {
+  pinMode(pinPump, OUTPUT);
+  pinMode(pinSendor, INPUT_PULLUP);
   WiFi.mode(WIFI_AP_STA);
   Serial.begin(115200);
   WiFi.begin("keenetic lite", "ananas20");
@@ -89,11 +94,23 @@ void loop(void)
     Serial.println(incomingPacket);
     parser();
   }
-  if (millis() - timerWatering >= delayWatering || millis() < 13000)
+  if (millis() - timerWatering >= delayWatering || millis() <= DelayWoterPomp)
   {
     timerWatering = millis();
     watering();
+    wateringBool = true;
   }
+  /*
+  if (wateringBool)
+  {
+    digitalWrite(pinPump, HIGH);
+    if (!digitalRead(pinSendor))
+    {
+      wateringBool = false;
+      digitalWrite(pinPump, LOW);
+    }
+  }
+  */
   httpServer.handleClient();
   MDNS.update();
 }
